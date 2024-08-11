@@ -183,7 +183,52 @@ AIOT_DEVICE_MAPPING = [
             }
         }
     ]
-}, 
+}, {
+    'lumi.relay.c2acn01': ["Aqara", "Relay", "LLKZMK11LM"],
+    'params': [
+        {
+            "switch": {
+                MK_INIT_PARAMS: {
+                    MK_HASS_NAME: "switch",
+                },
+                MK_RESOURCES: {
+                    "toggle": ("4.{}.85", "_attr_is_on"),
+                    "power": ("0.12.85", "_attr_current_power_w"),
+                    "energy": ("0.13.85", "_attr_today_energy_kwh"),
+                    "chip_temperature": ("8.0.2006", "_attr_chip_temperature"),
+                    "lqi": ("8.0.2007", "_attr_lqi")
+                }
+            }
+        }, {
+            "switch": {
+                MK_INIT_PARAMS: {
+                    MK_HASS_NAME: "decoupled"
+                },
+                MK_RESOURCES: {
+                    "decoupled": ("4.1{}.85", "_attr_is_on")
+                }
+            }
+        }, {
+            "sensor": {
+                MK_INIT_PARAMS: {
+                    MK_HASS_NAME: "power",
+                    "device_class": DEVICE_CLASS_POWER,
+                    "state_class": "measurement",
+                    "unit_of_measurement": POWER_WATT},
+                MK_RESOURCES: {"power": ("0.12.85", "_attr_native_value")}
+            }
+        }, {
+            "sensor": {
+                MK_INIT_PARAMS: {
+                    MK_HASS_NAME: "energy",
+                    "device_class": DEVICE_CLASS_ENERGY,
+                    "state_class": "total_increasing",
+                    "unit_of_measurement": ENERGY_KILO_WATT_HOUR},
+                MK_RESOURCES: {"energy": ("0.13.85", "_attr_native_value")},
+            }
+        }
+    ]
+},
 {
     # 墙壁开关（单火线双键版）
     'lumi.ctrl_neutral2.v1': ["Aqara", "Wall Switch (Double Rocker)", "QBKG04LM"],
@@ -197,7 +242,6 @@ AIOT_DEVICE_MAPPING = [
     'lumi.switch.b2lacn02': ["Aqara", "Wall Switch D1 (Double Rocker)", "QBKG21LM"],
     # 墙壁开关E1（单火线双键版）
     'lumi.switch.b2lc04': ["Aqara", "Wall Switch E1 (Double Rocker)", "QBKG21LM"],
-    'lumi.relay.c2acn01': ["Aqara", "Wireless Relay Controller (2 Channels)", "QBKG21LM"],
     'params': [
         {
             "switch": {
