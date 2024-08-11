@@ -197,6 +197,7 @@ AIOT_DEVICE_MAPPING = [
     'lumi.switch.b2lacn02': ["Aqara", "Wall Switch D1 (Double Rocker)", "QBKG21LM"],
     # 墙壁开关E1（单火线双键版）
     'lumi.switch.b2lc04': ["Aqara", "Wall Switch E1 (Double Rocker)", "QBKG21LM"],
+    'lumi.relay.c2acn01': ["Aqara", "Wireless Relay Controller (2 Channels)", "QBKG21LM"],
     'params': [
         {
             "switch": {
