@@ -197,16 +197,8 @@ AIOT_DEVICE_MAPPING = [
                     "energy": ("0.13.85", "_attr_today_energy_kwh"),
                     "chip_temperature": ("8.0.2006", "_attr_chip_temperature"),
                     "lqi": ("8.0.2007", "_attr_lqi")
-                }
-            }
-        }, {
-            "switch": {
-                MK_INIT_PARAMS: {
-                    MK_HASS_NAME: "decoupled"
                 },
-                MK_RESOURCES: {
-                    "decoupled": ("4.1{}.85", "_attr_is_on")
-                }
+                MK_MAPPING_PARAMS: {"ch_count": 2},
             }
         }, {
             "sensor": {
@@ -228,8 +220,7 @@ AIOT_DEVICE_MAPPING = [
             }
         }
     ]
-},
-{
+}, {
     # 墙壁开关（单火线双键版）
     'lumi.ctrl_neutral2.v1': ["Aqara", "Wall Switch (Double Rocker)", "QBKG04LM"],
     # 墙壁开关X1（单火线双键版）
